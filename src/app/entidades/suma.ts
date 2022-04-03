@@ -4,11 +4,23 @@ export class Suma {
     promedio: number = 0;
     suma: number = 0;
 
-    public sumar(): void {
+    private sumar(): void {
         this.suma = this.edadUno + this.edadDos;
     }
 
-    public promediar(): void {
+    private promediar(): void {
         this.promedio = this.suma != 0 ? this.suma / 2 : 0;
+    }
+
+    public calcular(): void {
+        this.sumar();
+        this.promediar();
+    }
+
+    public limpiar(): void {
+        this.edadUno = 0;
+        this.edadDos = 0;
+        this.promedio = 0;
+        this.suma = 0;
     }
 }
